@@ -7,10 +7,10 @@ Used optimization techniques such as regularization and dropout to generalize th
 
 
 # Script Details
-config.py : Configuration and HyperParameters for the model.
-model.py : Script for defining and training the model.
-load_data.py : Script for preprocessing and augmenting the image.
-drive.py : Script for driving the autonomous car in simulator. 
+config.py : Configuration and HyperParameters for the model. <br>
+model.py : Script for defining and training the model. <br>
+load_data.py : Script for preprocessing and augmenting the image. <br>
+drive.py : Script for driving the autonomous car in simulator. <br>
 
 
 # Network architecture : 
