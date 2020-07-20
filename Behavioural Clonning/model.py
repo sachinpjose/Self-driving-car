@@ -96,7 +96,7 @@ def load_data(datadir, data):
 def nvidia_model(summary = False):
 
   model = Sequential()
-  model.add(Convolution2D(24, kernel_size = (5, 5), strides=(2, 2), input_shape=(66, 200, 3), activation='elu'))
+  model.add(Convolution2D(24, kernel_size = (5, 5), strides=(2, 2), input_shape=(CONFIG['input_width'], CONFIG['input_height'], 3), activation='elu'))
   model.add(Convolution2D(36, kernel_size =(5, 5), strides=(2, 2), activation='elu'))
   model.add(Convolution2D(48, kernel_size =(5, 5), strides=(2, 2), activation='elu'))
   model.add(Convolution2D(64, kernel_size =(3, 3), activation='elu'))

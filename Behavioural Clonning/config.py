@@ -16,9 +16,9 @@ CONFIG = {
     'epochs': 10,
     'validation_steps' : 200,
     'save_model' : 'drive_model.h5',
-
+    'load_model' : r'C:/Users/Lenovo/Workspace/Machine Learning/Computer vision/Self driving car/Behavioural clonning/pretrained/model.h5',
+    'speed_limit' : 10,
     'batchsize': 512,
-    
     'delta_correction': 0.25,
     'augmentation_steer_sigma': 0.2,
     'augmentation_value_min': 0.2,

@@ -7,18 +7,19 @@ import base64
 from io import BytesIO
 from PIL import Image
 import cv2
+from config import *
 
  
 sio = socketio.Server()
  
 app = Flask(__name__) #'__main__'
-speed_limit = 10
+speed_limit = CONFIG['speed_limit']
 
 def img_preprocess(img):
     img = img[60:135,:,:]
     img = cv2.cvtColor(img, cv2.COLOR_RGB2YUV)
     img = cv2.GaussianBlur(img,  (3, 3), 0)
-    img = cv2.resize(img, (200, 66))
+    img = cv2.resize(img, (CONFIG['input_width'], CONFIG['input_height']))
     img = img/255
     return img
  
@@ -51,14 +52,7 @@ def send_control(steering_angle, throttle):
  
 if __name__ == '__main__':
 
-    
-
-    # compile the model
-    
-
-
-    model_file = r'C:/Users/Lenovo/Workspace/Machine Learning/Computer vision/Self driving car/Behavioural clonning/pretrained/model.h5'
+    model_file = CONFIG['load_model']
     model = load_model(model_file)
-    # model.compile("adam", "mse")
     app = socketio.Middleware(sio, app)
     eventlet.wsgi.server(eventlet.listen(('', 4567)), app)
